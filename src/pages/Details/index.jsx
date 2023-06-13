@@ -1,12 +1,14 @@
 import { Container } from './styles.js';
+import { Button } from '../../components/button';
+import { Header } from '../../components/header';
 
 export function Details() {
 
   return(
     <Container>
-      <h1>Hello World!</h1>
-      <p>Olá</p>
+      <Header />
+      <Button title='Voltar'></Button>
     </Container>
-  )
+  );
 
 }
