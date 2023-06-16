@@ -10,6 +10,10 @@ export const Container = styled.header`
   align-items: center;
   padding: 0 8.0rem;
   background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
+  
+  @media (max-width:450px) {
+    padding: 0 3.0rem;
+  }
 `;
 
 export const Profile = styled.div`
