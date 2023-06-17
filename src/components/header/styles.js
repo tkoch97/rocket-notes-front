@@ -11,8 +11,8 @@ export const Container = styled.header`
   padding: 0 8.0rem;
   background: ${({ theme }) => theme.COLORS.BACKGROUND_800};
   
-  @media (max-width:450px) {
-    padding: 0 3.0rem;
+  @media (max-width:560px) {
+    padding: 0 2.0rem;
   }
 `;
 
@@ -22,7 +22,7 @@ export const Profile = styled.div`
   gap: 1.0rem;
 
   > img {
-    width: 6.0rem;
+    width: clamp(5.0rem, 5.0rem + 3vw, 6.0rem);
     border-radius: 50%;
   }
 
@@ -32,12 +32,12 @@ export const Profile = styled.div`
     line-height: 2.4rem;
 
     span {
-      font-size: 1.4rem;
+      font-size: clamp(1.0rem, 1.0rem + 1vw, 1.4rem);
       color: ${({ theme }) => theme.COLORS.GRAY_100};
     }
-
+    
     strong {
-      font-size: 1.8rem;
+      font-size: clamp(1.0rem, 1.0rem + 1vw, 1.8rem);
       color: ${({ theme }) => theme.COLORS.WHITE};
     }
   }
