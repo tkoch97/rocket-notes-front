@@ -1,14 +1,19 @@
 import { Container } from "./styles";
 import PropTypes from 'prop-types';
 
-export function ButtonText({title, ...rest}) {
+export function ButtonText({title, isActive = false, ...rest}) {
   return(
-    <Container type="button" {...rest}>
+    <Container 
+      type="button"
+      isActive = {isActive}
+      {...rest}
+    >
       {title}
     </Container>
   );
 }
 
 ButtonText.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired
 };

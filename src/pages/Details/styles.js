@@ -38,6 +38,7 @@ export const Content = styled.div`
 
   > button:first-child {
     align-self: end;
+    margin-bottom: 6.4rem;
   }
 
   > button:last-child {
