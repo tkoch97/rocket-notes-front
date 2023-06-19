@@ -1,6 +1,8 @@
 import { Container, Brand, Menu, Search, Content, CreateNote } from './styles';
 import { Header } from '../../components/header';
 import { ButtonText } from '../../components/buttonText';
+import { Input } from '../../components/input';
+import { FiPlus, FiSearch } from 'react-icons/fi';
 
 export function Home() {
   return(
@@ -17,11 +19,16 @@ export function Home() {
         <li><ButtonText title="Express" /></li>
       </Menu>
 
-      <Search></Search>
+      <Search>
+        <Input placeholder="Pesquisar pelo título" icon={FiSearch}/>
+      </Search>
 
       <Content></Content>
 
-      <CreateNote></CreateNote>
+      <CreateNote>
+        <FiPlus />
+        Criar Nota
+      </CreateNote>
 
     </Container>
   )

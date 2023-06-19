@@ -46,7 +46,10 @@ export const Menu = styled.ul`
 
 export const Search = styled.div`
   grid-area: search;
-  background: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 6.4rem;
   `;
 
 export const Content = styled.div`
@@ -57,5 +60,10 @@ export const Content = styled.div`
 
 export const CreateNote = styled.button`
   grid-area: createNote;
-
+  background: ${({ theme }) => theme.COLORS.ORANGE};
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 `;
