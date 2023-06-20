@@ -11,5 +11,9 @@ export default {
     GRAY_300: "#666360",
 
     RED: "#FF002E"
+  },
+
+  PADDING: {
+    SEARCH_AND_CONTENT_HOMEPAGE: "clamp(1.0rem, 3.0rem + 1vw, 6.4rem)",
   }
 }

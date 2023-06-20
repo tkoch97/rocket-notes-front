@@ -31,31 +31,33 @@ export const Brand = styled.div`
     padding: 0 0.5rem;
   }
   
-`;
+  `;
 
 export const Menu = styled.ul`
   grid-area: menu;
   text-align: center;
   padding-top: 6.4rem;
   background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
-
+  
   > li {
     margin-bottom: 2.4rem;
   }
-`;
+  `;
 
 export const Search = styled.div`
   grid-area: search;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 6.4rem;
+  padding-left: ${({ theme }) => theme.PADDING.SEARCH_AND_CONTENT_HOMEPAGE};
+  padding-right: ${({ theme }) => theme.PADDING.SEARCH_AND_CONTENT_HOMEPAGE};
   `;
 
 export const Content = styled.div`
   grid-area: content;
-  background: yellow;
-  
+  padding-left: ${({ theme }) => theme.PADDING.SEARCH_AND_CONTENT_HOMEPAGE};
+  padding-right: ${({ theme }) => theme.PADDING.SEARCH_AND_CONTENT_HOMEPAGE};
+  overflow-y: auto;
 `;
 
 export const CreateNote = styled.button`
@@ -66,4 +68,4 @@ export const CreateNote = styled.button`
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-`;
+  `;
