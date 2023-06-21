@@ -28,7 +28,7 @@ export function Details() {
           <Section title="Links Úteis">
             <Links>
               <li><a href="#">https://www.rocketseat.com.br/</a></li>
-              <li><a href="#">https://www.rocketseat.com.br/</a></li>
+              <li><a href="#">https://carreiras.itau.com.br/tecnologia/</a></li>
             </Links>
           </Section>
 
