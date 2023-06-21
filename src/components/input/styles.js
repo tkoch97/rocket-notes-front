@@ -7,6 +7,7 @@ export const Container = styled.div`
   
   background: ${({ theme }) => theme.COLORS.BACKGROUND_900};
   border-radius: 1.0rem;
+  margin-bottom:0.8rem;
   
   > input {
     width: 100%;
