@@ -3,19 +3,17 @@ import backgroundImg from '../../assets/img/background_1.png';
 
 export const Container = styled.div`
   height: 100vh;
-
-  display:flex;
-  align-items: stretch;
-  text-align: center;
+  display: flex;
 `
 export const Form = styled.form`
-  display:flex;
+  display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 
   padding: 0 13.6rem;
-  
+
   @media(max-width:768px) {
     padding: 0 2.0rem;
   }
@@ -40,8 +38,9 @@ export const Form = styled.form`
     margin: 12.4rem 0 1.0rem 0;
   }
 `
+
 export const BackgroundImg = styled.div`
-  flex: 1;
+  flex:1;
   background: url(${backgroundImg}) no-repeat center;
   background-size: cover;
 `
