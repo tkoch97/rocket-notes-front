@@ -8,8 +8,18 @@ export const Container = styled.div`
   grid-template-rows: 10.5rem auto;
   grid-template-areas: 
   "header"
-  "content"
-  ;
+  "content";
+
+  > main {
+    grid-area: content;
+    overflow-y: auto;
+  }
+
+  .tags {
+    display: grid;
+    grid-template-columns:31% 32% 31%;
+    gap: 0.8rem;
+  }
 
 `;
 
