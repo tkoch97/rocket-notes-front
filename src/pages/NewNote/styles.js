@@ -41,4 +41,4 @@ export const Form = styled.form`
     color: ${({theme}) => theme.COLORS.GRAY_100};
   }
  }
-`
+` 
