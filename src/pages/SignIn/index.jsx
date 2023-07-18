@@ -1,10 +1,15 @@
 import { Container, Form, BackgroundImg } from './styles';
 import { Input } from '../../components/input';
 import { Button } from '../../components/button';
+import { useAuth } from '../../hooks/auth';
 import { FiMail, FiLock } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 
 export function SignIn() {
+
+  const data = useAuth();
+  console.log("CONTEXTO =>", data);
+
   return(
     <Container>
       <Form>
