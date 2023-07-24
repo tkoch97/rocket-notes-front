@@ -25,7 +25,7 @@ export function SignIn() {
         <h2>Faça seu login</h2>
 
         <Input 
-          placeholder='E-mail' 
+          placeholder='E-mail'
           type="text" 
           icon={FiMail}
           onChange={event => setEmail(event.target.value)}
