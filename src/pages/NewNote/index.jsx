@@ -7,8 +7,19 @@ import { NoteItem } from '../../components/noteItem';
 import { Button } from '../../components/button';
 
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 export function NewNote() {
+
+  const [links, setLinks] = useState([]);
+  const [newLink, setNewLink] = useState("");
+
+  function handleAddLink() {
+    setLinks(prevState => [...prevState, newLink]);
+    setNewLink("")
+    console.log("passei aqui");
+  }
+
   return(
     <Container>
       <Header />
@@ -23,8 +34,24 @@ export function NewNote() {
           <TextArea placeholder="Descrição"/>
 
           <Section title="Links úteis"/>
-          <NoteItem value='https://chat.openai.com/'/>
-          <NoteItem placeholder='Novo Link' isNew/>
+
+          {
+            links.map( (link, index) => (
+              <NoteItem
+                key={String(index)}
+                value={link}
+                onClick={() => {}}
+              />
+            ))
+          }
+          
+          <NoteItem 
+            isNew
+            placeholder='Novo Link'
+            value={newLink}
+            onChange={e => setNewLink(e.target.value)}
+            onClick={handleAddLink}
+          />
 
           <Section title="Marcadores"/>
           <div className='tags'>

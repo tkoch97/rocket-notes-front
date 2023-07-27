@@ -2,7 +2,7 @@ import {Container} from './styles.js';
 import {FiPlus, FiX} from 'react-icons/fi';
 import PropTypes from 'prop-types';
 
-export function NoteItem({ isNew, value, onClick, ...rest}) {
+export function NoteItem({isNew, value, onClick, ...rest}) {
   return(
     <Container isNew={isNew}>
       <input
@@ -13,7 +13,7 @@ export function NoteItem({ isNew, value, onClick, ...rest}) {
       />
 
       <button onClick={onClick}>
-        {isNew? <FiPlus /> : <FiX />}
+        {isNew ? <FiPlus /> : <FiX />}
       </button>
     </Container>
   )
@@ -22,5 +22,5 @@ export function NoteItem({ isNew, value, onClick, ...rest}) {
 NoteItem.propTypes = {
   isNew: PropTypes.bool,
   value: PropTypes.string,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func
 };
