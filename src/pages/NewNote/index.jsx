@@ -16,8 +16,11 @@ export function NewNote() {
 
   function handleAddLink() {
     setLinks(prevState => [...prevState, newLink]);
-    setNewLink("")
-    console.log("passei aqui");
+    setNewLink("");
+  }
+
+  function handleRemoveLink(deleted) {
+    setLinks(prevState => prevState.filter(link => link !== deleted))
   }
 
   return(
@@ -40,7 +43,7 @@ export function NewNote() {
               <NoteItem
                 key={String(index)}
                 value={link}
-                onClick={() => {}}
+                onClick={() => {handleRemoveLink(link)}}
               />
             ))
           }
