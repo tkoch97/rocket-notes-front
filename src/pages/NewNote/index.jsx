@@ -13,11 +13,25 @@ export function NewNote() {
 
   const [links, setLinks] = useState([]);
   const [newLink, setNewLink] = useState("");
+  const [tags, setTags] = useState([]);
+  const [newTag, setNewTag] = useState("");
 
   function handleAddLink() {
     setLinks(prevState => [...prevState, newLink]);
-    setNewLink("")
-    console.log("passei aqui");
+    setNewLink("");
+  }
+  
+  function handleRemoveLink(deleted) {
+    setLinks(prevState => prevState.filter(link => link !== deleted))
+  }
+  
+  function handleAddTag() {
+    setTags(prevState => [...prevState, newTag]);
+    setNewTag("");
+  }
+
+  function handleRemoveTag(deleted) {
+    setTags(prevState => prevState.filter(tag => tag !== deleted))
   }
 
   return(
@@ -40,7 +54,7 @@ export function NewNote() {
               <NoteItem
                 key={String(index)}
                 value={link}
-                onClick={() => {}}
+                onClick={() => {handleRemoveLink(link)}}
               />
             ))
           }
@@ -50,14 +64,41 @@ export function NewNote() {
             placeholder='Novo Link'
             value={newLink}
             onChange={e => setNewLink(e.target.value)}
-            onClick={handleAddLink}
-          />
+            onClick={() => {
+              if(newLink.trim() !== '') {
+                handleAddLink()
+              } else {
+                alert("É necessário que o campo esteja preenchido para adicionar um novo link.")
+              }
+            }}
+            />
 
           <Section title="Marcadores"/>
           <div className='tags'>
-            <NoteItem value='react'/>
-            <NoteItem value='node.js'/>
-            <NoteItem placeholder='Nova tag' isNew/>
+            
+            {
+              tags.map( (tag, index) => (
+                <NoteItem
+                  key={String(index)}
+                  value={tag}
+                  onClick={() => {handleRemoveTag(tag)}}
+                />
+              ))
+            }
+
+            <NoteItem 
+              isNew 
+              placeholder='Nova tag'
+              value={newTag}
+              onChange={e => setNewTag(e.target.value)}
+              onClick={() => {
+                if(newTag.trim() !== '') {
+                  handleAddTag()
+                } else {
+                  alert("É necessário que o campo esteja preenchido para adicionar uma nova tag")
+                }
+              }}
+            />
           </div>
 
           <Button title='Salvar'/>
