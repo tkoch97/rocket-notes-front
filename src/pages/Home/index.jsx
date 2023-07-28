@@ -4,10 +4,41 @@ import { ButtonText } from '../../components/buttonText';
 import { Input } from '../../components/input';
 import { Section } from '../../components/section';
 import { Note } from '../../components/note';
+import { api } from '../../services/api';
 import { FiPlus, FiSearch } from 'react-icons/fi';
+import { useState, useEffect } from 'react';
 
 
 export function Home() {
+
+  const [tags, setTags] = useState();
+  const [tagsSelected, setTagsSelected] = useState([]);
+
+  function handleTagsSelected(tagName) {
+    const alreadySelected = tagsSelected.includes(tagName);
+
+    if(alreadySelected) {
+      const filteredTags = tagsSelected.filter(tag => tag !== tagName);
+      setTagsSelected(filteredTags);
+    }else{
+      setTagsSelected(prevState => [...prevState, tagName])
+    }
+    
+  }
+
+  function handleSelectedAll(){
+    setTagsSelected([])
+  }
+
+  useEffect(() => {
+    async function fetchTags() {
+      const response = await api.get('/tags');
+      setTags(response.data)
+    }
+
+    fetchTags();
+  }, [])
+  
   return(
     <Container>
       <Brand>
@@ -17,9 +48,28 @@ export function Home() {
       <Header />
 
       <Menu>
-        <li><ButtonText title="Todos" isActive /></li>
-        <li><ButtonText title="React" /></li>
-        <li><ButtonText title="Express" /></li>
+
+        <li>
+          <ButtonText 
+            title="Todas"
+            onClick={handleSelectedAll}
+            isActive={tagsSelected.length === 0}
+          />
+        </li>
+
+        {
+          tags && tags.map(tag => (
+            <li key={String(tag.id)}>
+              <ButtonText
+                title={tag.name}
+                onClick={() => handleTagsSelected(tag.name)}
+                isActive={tagsSelected.includes(tag.name)}
+              />
+            </li>
+          ))
+
+        }
+
       </Menu>
 
       <Search>
