@@ -5,9 +5,10 @@ import { TextArea } from '../../components/textArea';
 import { Section } from '../../components/section';
 import { NoteItem } from '../../components/noteItem';
 import { Button } from '../../components/button';
+import { ButtonText } from '../../components/buttonText';
 import { api } from '../../services/api.js';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 export function NewNote() {
@@ -21,6 +22,10 @@ export function NewNote() {
   const [newTag, setNewTag] = useState("");
 
   const navigate = useNavigate();
+
+  function handleBack() {
+    navigate(-1)
+  }
 
   function handleAddLink() {
     setLinks(prevState => [...prevState, newLink]);
@@ -64,7 +69,7 @@ Por favor, clique no botão '+' para adicionar ou deixe o campo vazio.`)
     });
 
     alert("Nota criado com sucesso!");
-    navigate("/");
+    navigate(-1);
   }
 
   return(
@@ -74,10 +79,10 @@ Por favor, clique no botão '+' para adicionar ou deixe o campo vazio.`)
         <Form>
           <header>
             <h1>Criar nota</h1>
-            <Link 
-              to={"/"}>
-              Voltar
-            </Link>
+            <ButtonText 
+              title="Voltar"
+              onClick={handleBack}
+            />
           </header>
 
           <Input 
