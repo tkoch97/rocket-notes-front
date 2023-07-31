@@ -68,7 +68,7 @@ Por favor, clique no botão '+' para adicionar ou deixe o campo vazio.`)
       tags
     });
 
-    alert("Nota criado com sucesso!");
+    alert("Nota criada com sucesso!");
     navigate(-1);
   }
 
