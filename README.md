@@ -23,10 +23,12 @@ The project consists of an application where the user can create notes and save 
 
 ## 💡 Access
 
-Under development ⏳
+[🔗 Deploy 💻](rocketnotes-tkoch.netlify.app)
 </p>
-To test this web application, also download the API from below link and run on your local machine.
+To test in your machine, do a pull, install the dependencies and run by npm run dev.
+This project's API is deployed at render.com for free. Because of that the response can be a little slow.
 
+At below you can found the link of API repository.
 #
 
 ## Backend - API ⚙
